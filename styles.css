@@ -45,13 +45,18 @@ section {
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+  background-image: url('img/water.jpg');
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
   color: #fff;                 /* White text for contrast */
   text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
+  min-height: 100vh;           /* Make hero section fill the whole screen height */
+  padding: 0 20px;             /* Remove top and bottom padding so image fills screen */
+  display: flex;               /* Use flex to center content */
+  flex-direction: column;      /* Stack content vertically */
+  justify-content: center;     /* Center content vertically */
+  align-items: center;         /* Center content horizontally */
   border-radius: 0 0 16px 16px; /* Only round bottom corners */
 
   /* Add a dark overlay for better text readability */
@@ -131,9 +136,74 @@ h2 {
   transform: translateY(-2px) scale(1.04); /* Slight lift */
 }
 
+/* Call to Action Button Styles */
+.cta-button {
+  display: inline-block;         /* Make the link look like a button */
+  background-color: #FFC907;     /* Brand yellow color */
+  color: #222;                   /* Dark text for contrast */
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 14px 36px;           /* Space inside the button */
+  border: none;
+  border-radius: 24px;           /* Rounded corners */
+  margin-top: 24px;              /* Space above the button */
+  text-decoration: none;         /* Remove underline */
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10); /* Soft shadow */
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #2E9DF7;     /* Change to blue on hover */
+  color: #fff;                   /* White text on hover */
+}
+
 /* Add some spacing between sections */
 section {
   margin-bottom: 20px;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+  width: 100%; /* Make navbar stretch across the top */
+  background-color: #2E9DF7; /* Use the brand blue color */
+  display: flex;             /* Use flex to arrange items in a row */
+  align-items: center;       /* Center items vertically */
+  justify-content: space-between; /* Space out logo and links */
+  padding: 8px 24px;         /* Add some space inside the navbar */
+  position: fixed;           /* Keep navbar at the top when scrolling */
+  top: 0;
+  left: 0;
+  z-index: 1000;             /* Make sure navbar stays above other content */
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10); /* Soft shadow */
+}
+
+.navbar-logo img {
+  height: 40px; /* Set logo size */
+}
+
+.navbar-links {
+  list-style: none;      /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex;         /* Arrange links in a row */
+  gap: 24px;             /* Space between links */
+}
+
+.navbar-links li a {
+  color: #fff;           /* White text for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+  color: #FFC907;        /* Change color on hover to brand yellow */
+}
+
+/* Add space at the top of the page so content is not hidden behind navbar */
+body {
+  padding-top: 60px; /* Adjust if navbar height changes */
 }
 
 /* 
